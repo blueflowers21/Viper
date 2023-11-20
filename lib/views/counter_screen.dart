@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'counter_presenter.dart';
-import 'second_screen.dart'; 
+import '../presenters/counter_presenter.dart';
 
 class CounterScreen extends StatelessWidget {
   const CounterScreen({super.key});
@@ -46,13 +45,10 @@ class CounterScreen extends StatelessWidget {
             const SizedBox(height: 16),
             ElevatedButton(
               onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const SecondScreen()), 
-                );
-              },
-              child: const Text('Segunda pantalla'),
-            ),
+                Navigator.pushNamed(context, '/second'); 
+                },
+                child: const Text('Go to Second Screen'),
+                ),
           ],
         ),
       ),

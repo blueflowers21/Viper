@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'counter_screen.dart';
-import 'counter_presenter.dart';
+import 'package:viper/presenters/counter_presenter.dart';
+
+import 'app_router.dart'; 
 
 void main() {
   runApp(
@@ -20,7 +21,8 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: CounterScreen(),
+      initialRoute: '/', // Ruta inicial
+      onGenerateRoute: AppRouter.generateRoute,
     );
   }
 }

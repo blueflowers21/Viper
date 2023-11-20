@@ -1,4 +1,4 @@
-import 'counter.dart';
+import '../entities/counter.dart';
 
 class CounterInteractor {
   Counter incrementCounter(Counter counter) {

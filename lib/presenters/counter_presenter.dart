@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:viper/counter_interactor.dart';
-import 'counter.dart';
+import 'package:viper/interactors/counter_interactor.dart';
+import '../entities/counter.dart';
 
 class CounterPresenter extends ChangeNotifier {
   final CounterInteractor _interactor = CounterInteractor();
