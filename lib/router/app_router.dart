@@ -7,9 +7,15 @@ class AppRouter {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case '/':
-        return MaterialPageRoute(builder: (_) => const CounterScreen());
+        return MaterialPageRoute(
+          builder: (_) => const CounterScreen(),
+          settings: settings,
+        );
       case '/second':
-        return MaterialPageRoute(builder: (_) => const SecondScreen());
+        return MaterialPageRoute(
+          builder: (_) => const SecondScreen(),
+          settings: settings,
+        );
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(
@@ -17,7 +23,12 @@ class AppRouter {
               child: Text('Ruta desconocida: ${settings.name}'),
             ),
           ),
+          settings: settings,
         );
     }
+  }
+
+  static void navigateToSecondScreen(BuildContext context) {
+    Navigator.pushNamed(context, '/second');
   }
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:viper/interactors/counter_interactor.dart';
 import '../entities/counter.dart';
+import '../router/app_router.dart';
 
 class CounterPresenter extends ChangeNotifier {
   final CounterInteractor _interactor = CounterInteractor();
@@ -16,5 +17,9 @@ class CounterPresenter extends ChangeNotifier {
   void decrementCounter() {
     _counter = _interactor.decrementCounter(_counter);
     notifyListeners();
+  }
+
+  void navigateToSecondScreen(BuildContext context) {
+    AppRouter.navigateToSecondScreen(context);
   }
 }

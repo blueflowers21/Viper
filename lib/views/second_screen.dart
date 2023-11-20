@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class SecondScreen extends StatelessWidget {
-  const SecondScreen({super.key});
+  const SecondScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -9,8 +9,8 @@ class SecondScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('2da Pantalla'),
       ),
-      body: const Center(
-        child: Text('Segunda Pantalla'),
+      body:  Center(
+        child: Image.asset('assets/lego.jpg'), 
       ),
     );
   }
